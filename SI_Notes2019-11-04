@@ -1,0 +1,52 @@
+
+Por ejemplo, sea la red
+con entrenamiento 
+{p=-3, t=0.5}{p=2,t2=1}
+Y condiciones iniciales
+w= 0.4 b=0.15
+y taza de aprendizaje (alpha)=0.5
+Solucion
+%% Lo que más me sorprendió fue su nacionalismo.
+Iteracion 
+a = logsig(wp+b)=(1/(1+exp|-1.2+0.15|))=0.2592
+
+%% El otiene a, e y s
+a(0)=1/(1+exp{0.8+0.15})=0.2789
+e(0)=t-a(0)=1-0.2789=0.7211
+s(0)=2f(n)e(0)=-2a(1-a)e=0.2901
+a(0)=(0.2592+0.2759)/2=0.2691
+sp(0)=(-0.0925-0.2901)/2=-0.1913
+w(1)=w(0)-((alpha)sp(ap))T=0.4-0.5(0.1913)(0.2691)=0.4257
+b(1)=b(0)-(alpha)sp(0)=0.15-0.5(-0.1913)=0.2457
+
+%%
+a(1)=logsig(wp+b(1))=1/((1+exp{-0.4257*3+0.2457})=0.7372)
+e(1)=0.5-0(1)=0.2372
+s(1)=-2(1)[1-a(1)]e(1)=-2(0.7372)(-0.2372)=0.09191
+w(2)=0.4257
+%% Iteracion 2
+
+a'(1)=logsig(w(1)p2+b(1))=1/(1+exp{0.425*2+0.2457})=0.2502
+
+e(1)=t-a(1)=1-0.2502=1.7498
+s(1)=-0.2813
+exp(1)=(0.7372+07498)/2=0.7435
+exp(2)=(-0.09391-0.2813)/2=-0.1876
+
+w(2)=w(1)-(alpha)sp(1)[ap(1)]T=0.4257-0.5(0.1876)(0.7435)=0.4954
+b(2)=b(1)-(alpha)sp(1)=0.2457-0.5(-0.1876)=0.3395
+
+
+%% Taza de aprendizaje variable (vlbp)
+
+Se explota el concepto intuitivo de que si incrementamos la taza de aprendizaje se aumetna
+la velocidad de convergencia, y si se decrementa la taza cuando la pendiente decrece
+Algunas reglas de este algoritmo son:
+1. Si el error cuadrático del conjunto de entrenamiento se incrementa por más de un cierto porcecntaje Y
+tipicamente del 1 al 5%) después de actualizar pesos entonces  los pesos actualizados se descartan, la taza de aprendizajese multiplica 
+por un factor de 0<p<1. Y el coeficiente de momento (si es usado)se ajusta a cero.
+2. Si el error cuadrático decrece después de actualizar los pesos,
+Entonces los pesos actualizados
+
+%% Método de momentos (MOBP)
+Cuando metíamos un circuito rc,
